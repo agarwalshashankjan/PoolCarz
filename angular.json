@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PoolCarz"
+    }
+  },
+  "defaultProject": "PoolCarz",
+  "cli": {
+    "analytics": "bbe1093e-c0ec-438b-b089-03e450c54afd"
+  }
 }
