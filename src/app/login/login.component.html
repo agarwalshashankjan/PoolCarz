@@ -11,6 +11,7 @@
           id="userName"
           aria-describedby="emailHelpId"
           placeholder="Enter user Name"
+          [(ngModel)]="myusername"
         />
         <small id="emailHelpId" class="form-text text-muted"
           >eg: agarwal.shashank@gmail.com</small
@@ -24,13 +25,16 @@
           id="userPassword"
           aria-describedby="passwordHelpId"
           placeholder="Enter password"
+          [(ngModel)] = "mypassword"
         />
         <a
           href="#"
+          (click)="checkUser()"
           class="align-middle btn btn-primary"
           style="margin-top: 10px"
           >Login</a
         >
+        <h6 class="text-danger">{{isValid ? null: 'Credentials not valid'}}</h6>
       </div>
     </div>
   </div>
