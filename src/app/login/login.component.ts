@@ -11,18 +11,28 @@ export class LoginComponent implements OnInit {
     { userName: 'shailesh@prideIndia.org', password: 'hola123' },
   ];
 
-  myusername:string = '';
-  mypassword:string = '';
+  myusername: string = '';
+  mypassword: string = '';
 
-  isValid: boolean = null;
+  isAuthentic: boolean;
+  submitted: boolean = false;
 
   checkUser() {
+    this.submitted = true;
     if (
       this.myusername == this.users[1].userName &&
       this.mypassword == this.users[1].password
     )
-      this.isValid = true;
-    else this.isValid = false;
+      this.isAuthentic = true;
+    else this.isAuthentic = false;
+  }
+
+  reset() {
+    this.myusername = '';
+    this.mypassword = '';
+
+    this.isAuthentic;
+    this.submitted = false;
   }
   constructor() {}
 

@@ -1,5 +1,9 @@
 <div class="container-fluid">
-  <div class="card col-md-4 offset-4" style="margin-top: 50px">
+  <div
+    *ngIf="!submitted; else submitDiv"
+    class="card col-md-4 offset-4"
+    style="margin-top: 50px"
+  >
     <h5 class="card-header">Login</h5>
     <div class="card-body">
       <div class="form-group">
@@ -25,7 +29,7 @@
           id="userPassword"
           aria-describedby="passwordHelpId"
           placeholder="Enter password"
-          [(ngModel)] = "mypassword"
+          [(ngModel)]="mypassword"
         />
         <a
           href="#"
@@ -34,8 +38,24 @@
           style="margin-top: 10px"
           >Login</a
         >
-        <h6 class="text-danger">{{isValid ? null: 'Credentials not valid'}}</h6>
       </div>
     </div>
   </div>
+
+  <ng-template #submitDiv>
+    <div class="card col-md-4 offset-4">
+      <div *ngIf="isAuthentic; else failureMsg" class="card-body">
+        <h5>Welcome</h5>
+        <button (click)="reset()" class="btn btn-success">Back</button>
+      </div>
+      <ng-template #failureMsg>
+        <div class="card-body">
+          <h5 class="text-danger">
+            Wrong Credentials! Please go back and try again.
+          </h5>
+          <button (click)="reset()" class="btn btn-danger">Back</button>
+        </div>
+      </ng-template>
+    </div>
+  </ng-template>
 </div>
