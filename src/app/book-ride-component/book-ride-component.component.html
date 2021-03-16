@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="card col-md-6 offset-3" style="margin-top: 50px">
+    <h5 class="card-header">Book a Ride</h5>
+    <div class="card-body">
+      <p>
+        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
+        laying out print, graphic or web designs. The passage is attributed to
+        an unknown typesetter in the 15th century who is thought to have
+        scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a
+        type specimen book.
+      </p>
+      <a
+        (click)="toggleTable()"
+        class="align-middle btn btn-primary"
+        style="margin: 10px 150px 10px 150px"
+        >Show All Rides</a
+      >
+      <div *ngIf="show">
+        <a class="align-middle btn btn-primary" style="margin: 10px"
+          >To Lucknow</a
+        >
+        <a class="align-middle btn btn-primary" style="margin: 10px"
+          >From Lucknow</a
+        >
+        <a class="align-middle btn btn-primary" style="margin: 10px">Others</a>
+        <p class="align-center">Please Select a Ride</p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Start Point</th>
+              <th scope="col">End Point</th>
+              <th scope="col">Seat Available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of tableData">
+              <td>{{ data.pickup }}</td>
+              <td>{{ data.destination }}</td>
+              <td>{{ data.seatsLeft }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <br />
+      <a
+        class="align-middle btn btn-primary"
+        style="margin: 10px 100px 10px 100px"
+        >Offer a Ride</a
+      >
+    </div>
+  </div>
+</div>
