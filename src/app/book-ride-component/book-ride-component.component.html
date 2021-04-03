@@ -15,10 +15,10 @@
         >Show All Rides</a
       >
       <div *ngIf="show">
-        <a class="align-middle btn btn-primary" style="margin: 10px"
+        <a class="align-middle btn btn-primary" style="margin: 10px" (click)= toLucknow()
           >To Lucknow</a
         >
-        <a class="align-middle btn btn-primary" style="margin: 10px"
+        <a class="align-middle btn btn-primary" style="margin: 10px" (click)= fromLucknow()
           >From Lucknow</a
         >
         <a class="align-middle btn btn-primary" style="margin: 10px">Others</a>
@@ -32,7 +32,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let data of tableData">
+            <tr *ngFor="let data of tableData | rideFilterPipe : path">
               <td>{{ data.pickup }}</td>
               <td>{{ data.destination }}</td>
               <td>{{ data.seatsLeft }}</td>

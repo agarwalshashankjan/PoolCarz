@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BookRideComponentComponent implements OnInit {
   show: boolean = false;
 
+  path: string = null;
   tableData: {
     id: number;
     offerId: string;
@@ -48,6 +49,13 @@ export class BookRideComponentComponent implements OnInit {
 
   toggleTable() {
     this.show = !this.show;
+  }
+
+  toLucknow(){
+    this.path = "To Lucknow";
+  }
+  fromLucknow(){
+    this.path = "From Lucknow";
   }
   constructor() {}
 

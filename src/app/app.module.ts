@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { BookRideComponentComponent } from './book-ride-component/book-ride-component.component';
+import {RideFilterPipePipe} from '../pipes/ride-filter-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    BookRideComponentComponent
+    BookRideComponentComponent,
+    RideFilterPipePipe
   ],
   imports: [
     BrowserModule,
