@@ -51,12 +51,6 @@ export class BookRideComponentComponent implements OnInit {
     this.show = !this.show;
   }
 
-  toLucknow(){
-    this.path = "To Lucknow";
-  }
-  fromLucknow(){
-    this.path = "From Lucknow";
-  }
   constructor() {}
 
   ngOnInit(): void {}
